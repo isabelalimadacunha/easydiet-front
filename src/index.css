@@ -1,0 +1,447 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Media Queries */
+@media (max-width: 2600px) {
+  #titulo {
+    font-size: 90px;
+  }
+  #titulo-sobre {
+    font-size: 75px;
+  }
+  #texto-inicio {
+    font-size: 75px;
+  }
+  #texto-sobre {
+    font-size: 28px;
+  }
+  h1 {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 2200px) {
+  #titulo {
+    font-size: 80px;
+  }
+  #titulo-sobre {
+    font-size: 70px;
+  }
+  #texto-inicio {
+    font-size: 75px;
+  }
+  #texto-sobre {
+    font-size: 26px;
+  }
+  h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 2000px) {
+  #titulo {
+    font-size: 70px;
+  }
+  #titulo-sobre {
+    font-size: 65px;
+  }
+  #texto-inicio {
+    font-size: 65px;
+  }
+  #texto-sobre {
+    font-size: 24px;
+  }
+  h1 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 1800px) {
+  #titulo {
+    font-size: 60px;
+  }
+  #titulo-sobre {
+    font-size: 60px;
+  }
+  #texto-inicio {
+    font-size: 55px;
+  }
+  #texto-sobre {
+    font-size: 22px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 1500px) {
+  #titulo {
+    font-size: 60px;
+  }
+  #titulo-sobre {
+    font-size: 55px;
+  }
+  #texto-inicio {
+    font-size: 50px;
+  }
+  #texto-sobre {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #titulo {
+    font-size: 50px;
+  }
+  #titulo-sobre {
+    font-size: 45px;
+  }
+  #texto-inicio {
+    font-size: 40px;
+  }
+  #texto-sobre {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  #titulo {
+    font-size: 40px;
+  }
+  #titulo-sobre {
+    font-size: 35px;
+  }
+  #texto-inicio {
+    font-size: 30px;
+  }
+  #texto-sobre {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  #titulo {
+    font-size: 30px;
+  }
+  #titulo-sobre {
+    font-size: 25px;
+  }
+  #texto-inicio {
+    font-size: 20px;
+  }
+  #texto-sobre {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  #titulo {
+    font-size: 25px;
+  }
+  #titulo-sobre {
+    font-size: 20px;
+  }
+  #texto-inicio {
+    font-size: 18px;
+  }
+  #texto-sobre {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  #titulo {
+    font-size: 20px;
+  }
+  #titulo-sobre {
+    font-size: 18px;
+  }
+  #texto-inicio {
+    font-size: 16px;
+  }
+  #texto-sobre {
+    font-size: 10px;
+  }
+  h1 {
+    font-size: 16px;
+  }
+}
+
+.App {
+  
+  margin: 0 auto; 
+  max-width: 100vw;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  background-color: #B1F9B1;
+  color: #3D3D3D;
+  top: 0;
+  position:fixed;
+  max-width: 100%;
+  height: 70px;
+}
+
+.barBtn {
+  display: flex;
+  justify-content: flex-end;
+
+  
+}
+.App-logo {
+  height: 100px; 
+  width: auto; 
+  pointer-events: none;
+}
+
+/* Telas */
+.tela {
+  height: 100vh;
+  width: auto;
+}
+
+#tela-inicio{
+  background-image: url('./background1.png');
+  background-size: cover;
+  background-position: center;
+  top: 70px;
+  padding-top: 40px;
+  
+}
+
+#tela-sobre {
+  padding-top: 5%;
+  background-color: #1F5923;
+  color: #F8F4ED;
+}
+
+
+/* Títulos */
+#titulo {
+  text-align: left;
+  position:relative;
+  color: #1F5923;
+  font-family: sans-serif;
+  font-weight: bold;
+  
+/* font-size: 66px; */
+  margin-bottom: 10px;
+  margin-top: 280px;
+  padding-right: 199px;
+  width: calc(100% - 320px);
+}
+#titulo-sobre{
+    text-align: left;
+  padding-left: 40px;
+  padding-top: 35px;
+  position:relative;
+}
+
+/* link */
+.link {
+  color: #F8F4ED; 
+}
+
+.link:hover {
+  color: #B1F9B1;
+  text-decoration: underline; 
+}
+
+
+/* Textos */
+
+#texto-inicio{
+
+  color: #3D3D3D;
+  text-align: left;
+  padding-left: 55px;
+  padding-right: 160px;
+  top: 0px;
+  font-family: garamond;
+  width: calc(100% - 230px);
+  top: 350px; 
+  left: 20px;
+  
+}
+#texto-sobre{
+  color: #F8F4ED;
+  padding-top: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+}
+
+
+h1 {
+    text-align: center;
+  font-family:sans-serif;
+  color: #F8F4ED;
+}
+
+
+/* Box */
+#tela1-box {
+  background-color: #F8F4ED;
+  width: 44%;
+  height: 100vh;
+  position:absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 40px;
+  
+}
+
+.proposito-box,
+.como-funciona-box,
+.oque-diferencia-box {
+  margin: 0 20px; 
+}
+
+
+
+/* Footer */
+.footer-box {
+  background-color: #1F5923;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  height: 30vh;
+  justify-content: center;
+}
+.container {
+  max-width: auto;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; 
+}
+/* Estilo para o formulário da newsletter */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.newsletter-title h3 {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.newsletter-text {
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.newsletter-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.newsletter-input input[type="email"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ffffff;
+  border-radius: 4px 0 0 4px;
+  color: #333333;
+}
+
+.newsletter-input button {
+  background-color: #ffffff;
+  color: #1F5923;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
+
+.newsletter-input button:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estilo para os ícones sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icon {
+  margin: 0 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon img {
+  width: 60%;
+  height: auto;
+}
+
+/* Estilo para o texto de direitos autorais */
+.copyright {
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 20px;
+  padding-right: 100px;
+  flex: 1; 
+}
