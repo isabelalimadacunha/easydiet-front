@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 
 const app = express();
 const PORT = process.env.PORT || 3003;
-const apiKey = '886fba5b61674926a535fa6e6e51c088';
+const apiKey = YOUR_API_KEY;
 
 
 app.use(cors({
