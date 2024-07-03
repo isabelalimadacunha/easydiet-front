@@ -26,7 +26,7 @@ Easy Diet é uma aplicação web que ajuda os usuários a gerar planos de refei�
 
 
 ## Acesse o site
-Você pode acessar o Easy Diet em: Easy Diet
+Você pode acessar o Easy Diet em: [Easy Diet](https://easydiet.vercel.app/)
 
 
 ## Backend
