@@ -10,7 +10,8 @@ function calcularCalorias({ peso, altura, idade, sexo, nivelAtivFisica, objetivo
   const tmbHomem = 88.36 + (13.4 * peso) + (4.8 * altura) - (5.7 * idade);
   const tmbMulher = 447.6 + (9.2 * peso) + (3.1 * altura) - (4.3 * idade);
   const tmb = sexo === 'masculino' ? tmbHomem : tmbMulher;
-
+  
+  // Define o fator de atividade baseado no nível de atividade física
   let fatorAtividade;
   switch(nivelAtivFisica) {
     case 'sedentario':
@@ -31,7 +32,8 @@ function calcularCalorias({ peso, altura, idade, sexo, nivelAtivFisica, objetivo
     default:
       fatorAtividade = 1.2;
   }
-
+  
+  // Calcula as calorias diárias com base no objetivo
   const caloriasManterPeso = tmb * fatorAtividade;
   let caloriasDiarias;
   if (objetivo === 'perderPeso') {
@@ -44,6 +46,7 @@ function calcularCalorias({ peso, altura, idade, sexo, nivelAtivFisica, objetivo
 
   return Math.round(caloriasDiarias);
 }
+
 //Tradução dos dias da semana
 const dayNames = {
   monday: 'Segunda-feira',
@@ -76,7 +79,7 @@ function calcularIMC({ peso, altura }) {
     faixaIMC = 'Obesidade grau III';
   }
 
-  return { indiceMC: indiceMC.toFixed(2), faixaIMC };
+  return { indiceMC: indiceMC.toFixed(2), faixaIMC }; // Retorna o IMC e sua faixa
 }
 
 // Rradução para os tipos de dieta
@@ -111,13 +114,15 @@ const intoleranceTranslations = {
 // Função para criar o PDF
 const createPDF = (data, nome, diet, logo, imcResultado, intolerancias) => {
   const doc = new jsPDF();
-
+  
+  // Configurações para o posicionamento do logo
   const logoWidth = 50;
   const logoHeight = 40;
   const marginRight = 10;
   const marginTop = 0;
   doc.addImage(logo, 'PNG', doc.internal.pageSize.getWidth() - logoWidth - marginRight, marginTop, logoWidth, logoHeight);
 
+  // Configurações de fonte e tamanho para o conteúdo do PDF
   doc.setFont('helvetica');
   doc.setFontSize(13);
 
@@ -144,11 +149,13 @@ const margins = {
     width: doc.internal.pageSize.getWidth() - 20 
 };
 doc.text(textoExplicativo, margins.left, margins.top, { align: 'justify', maxWidth: margins.width });
- // Adiciona uma nova página para começar a dieta
+ 
+  // Adiciona uma nova página para começar a dieta
   doc.addPage();
 
   const days = Object.keys(data.week);
 
+  // Itera pelos dias da semana no plano de refeições
   days.forEach((day, index) => {
     const centerX = doc.internal.pageSize.getWidth() / 2; 
     const yPosition = 20; 
@@ -156,13 +163,15 @@ doc.text(textoExplicativo, margins.left, margins.top, { align: 'justify', maxWid
 
     const meals = data.week[day].meals;
     let y = yPosition + 10; 
-
+    
+    // Itera pelas refeições do dia
     meals.forEach((meal) => {
       if (y > 250) { 
         doc.addPage();
         y = 20; 
       }
 
+      // Adiciona informações da refeição no PDF
       doc.text(`${meal.title}`, 20, y);
       y += 10;
       doc.text(`Tempo de preparo: ${meal.readyInMinutes} minutos`, 20, y);
@@ -172,6 +181,8 @@ doc.text(textoExplicativo, margins.left, margins.top, { align: 'justify', maxWid
       doc.text(`Receita: ${meal.sourceUrl}`, 20, y);
       y += 20;
     });
+    
+    // Adiciona uma nova página entre os dias, se não for o último
     if (index < days.length - 1) {
       doc.addPage();
     }
@@ -190,27 +201,27 @@ function Form() {
     const [sexo, setSexo] = useState('');
     const [peso, setPeso] = useState('');
     const [altura, setAltura] = useState('');
-    
     const [objetivo, setObjetivo] = useState('');
     const [nivelAtivFisica, setNivelAtivFisica] = useState('');
-    
     const [diet, setDiet] = useState('');
     const [intolerancias, setIntolerancias] = useState([]);
-
     const [imcResultado, setImcResultado] = useState(null);
     const [calculateIMC, setCalcularIMC] = useState(false);
-   
+
+  // Calcula o IMC se a variável calculateIMC é verdadeira
     const handleIMC = useCallback(() => {
       if (calculateIMC) {
         const imcData = calcularIMC({ peso, altura });
         setImcResultado(imcData);
       }
     }, [calculateIMC, peso, altura]);
-  
+
+  //Chama o handleIMC sempre que há uma mudança
     useEffect(() => {
       handleIMC();
     }, [handleIMC]);
-  
+
+  //Função handleSubmit é executada quando o formulário é submetido
     const handleSubmit = async (e) => {
       e.preventDefault();
      
@@ -224,7 +235,8 @@ function Form() {
           diet,
           intolerancias
         });
-    
+
+        // Faz uma requisição POST para o servidor com os dados da dieta
         const response = await fetch('https://easydiet-be.vercel.app/api/generate-meal-plan', {
           method: 'POST',
           headers: {
@@ -241,11 +253,14 @@ function Form() {
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.statusText}`);
         }
-    
+
+        // Converte a resposta em formato JSON
         const data = await response.json();
         console.log('Dieta gerada:', data);
         console.log(targetCalories);
-      createPDF(data, nome, diet, logo, calculateIMC ? imcResultado : null, intolerancias);
+        
+       // Cria um PDF com os dados recebidos do servidor
+       createPDF(data, nome, diet, logo, calculateIMC ? imcResultado : null, intolerancias);
             } catch (error) {
         console.error('Erro ao gerar a dieta:', error);
       }
