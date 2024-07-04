@@ -251,7 +251,12 @@ function Form() {
       }
     };
     
-  
+   const handleKeyDown = (event) => {
+      const charCode = event.charCode || event.keyCode;
+      if (charCode !== 0 && (charCode < 48 || charCode > 57) && charCode !== 8) {
+        event.preventDefault();
+      }
+    };
 
     return (
         <div id='tela-formulario' className='tela'>
@@ -275,7 +280,7 @@ function Form() {
                 step="1"
                 required
                 value={idade}
-                onChange={(e) => setIdade(e.target.value)}
+                onChange={(e) => setIdade(e.target.value)} onKeyDown={handleKeyDown}
               />
               <h3 htmlFor="sexo">Sexo:</h3>
               <select id="sexo" name="sexo" type="select" required value={sexo} onChange={(e) => setSexo(e.target.value)}>
@@ -284,9 +289,9 @@ function Form() {
                 <option value="feminino">Feminino</option>
               </select>
               <h3 htmlFor="peso">Peso (kg):</h3>
-              <input type="number" id="peso" name="peso" min="1" step="0.1" required  value={peso} onChange={(e) => setPeso(e.target.value)} />
+              <input type="number" id="peso" name="peso" min="1" step="0.1" required  value={peso} onChange={(e) => setPeso(e.target.value)} onKeyDown={handleKeyDown} />
               <h3 htmlFor="altura">Altura (cm):</h3>
-              <input type="number" id="altura" name="altura" min="10" step="0.1" required value={altura} onChange={(e) => setAltura(e.target.value)} />
+              <input type="number" id="altura" name="altura" min="10" step="0.1" required value={altura} onChange={(e) => setAltura(e.target.value)} onKeyDown={handleKeyDown} />
               
               <div id='objetivos'>
                 <h3>Objetivos:</h3>
