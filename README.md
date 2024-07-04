@@ -30,5 +30,5 @@ Você pode acessar o Easy Diet em: [Easy Diet](https://easydiet.vercel.app/)
 
 
 ## Backend
-- Neste [link](https://easydiet.vercel.app/) você pode acessar o backend do projeto
+- Neste [link](https://github.com/isabelalimadacunha/easydiet-be) você pode acessar o backend do projeto
   
