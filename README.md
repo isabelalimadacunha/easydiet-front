@@ -21,7 +21,7 @@ Easy Diet is a web application that helps users generate personalized meal plans
 - Nathália Ferrari
 
 ## Access the Website
-You can access Easy Diet at: [Easy Diet Website](https://example.com)
+You can access Easy Diet at: [Easy Diet Website](https://easydiet.vercel.app)
 
 ## Backend
-You can access the backend of the project here: [Easy Diet Backend](https://example.com)
+You can access the backend of the project here: [Easy Diet Backend](https://github.com/isabelalimadacunha/easydiet-be/tree/main)
