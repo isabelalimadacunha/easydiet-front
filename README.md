@@ -1,22 +1,18 @@
 # Easy Diet
+Easy Diet is a web application that helps users generate personalized meal plans based on their dietary preferences, calorie goals, and food intolerances. The app uses the Spoonacular API to provide customized meal plans.
 
-Easy Diet é uma aplicação web que ajuda os usuários a gerar planos de refeições personalizados com base em suas preferências alimentares, metas calóricas e intolerâncias alimentares. A aplicação utiliza a API Spoonacular para fornecer planos de refeições personalizados.
+## Features
+- **Personalized Meal Plans:** Generates meal plans based on user-defined criteria, including target calories, dietary preferences (e.g., vegetarian), and food intolerances.
+- **User-Friendly Interface:** Simple and intuitive interface for users to input their dietary needs and receive meal plans.
+- **API Integration:** Uses the Spoonacular API to fetch meal plans and dietary information.
 
-## Funcionalidades
-
-- **Planos de Refeições Personalizados:** Gera planos de refeições com base em critérios definidos pelo usuário, incluindo calorias alvo, preferências alimentares (por exemplo, vegetariano) e intolerâncias alimentares.
-- **Interface Amigável:** Interface simples e intuitiva para os usuários inserirem suas necessidades dietéticas e receberem planos de refeições.
-- **Integração com API:** Utiliza a API Spoonacular para buscar planos de refeições e informações dietéticas.
-
-## Tecnologias Utilizadas
-
+## Technologies Used
 - **Frontend:** React, JavaScript, HTML, CSS
 - **Backend:** Node.js, Express
-- **API:** [Spoonacular API](https://spoonacular.com/food-api)
-- **Hospedagem:** Vercel
+- **API:** Spoonacular API
+- **Hosting:** Vercel
 
-## Equipe
-
+## Team
 - Eduardo Cansan
 - Gabriel Heyde
 - Gabriel Schafer
@@ -24,11 +20,8 @@ Easy Diet é uma aplicação web que ajuda os usuários a gerar planos de refei�
 - Jardel Nikolas
 - Nathália Ferrari
 
-
-## Acesse o site
-Você pode acessar o Easy Diet em: [Easy Diet](https://easydiet.vercel.app/)
-
+## Access the Website
+You can access Easy Diet at: [Easy Diet Website](https://example.com)
 
 ## Backend
-- Neste [link](https://github.com/isabelalimadacunha/easydiet-be) você pode acessar o backend do projeto
-  
+You can access the backend of the project here: [Easy Diet Backend](https://example.com)
